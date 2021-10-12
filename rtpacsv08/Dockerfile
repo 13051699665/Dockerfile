@@ -41,6 +41,18 @@ RUN pip install --upgrade --no-index --find-links="/pip-package-rtpacs/" pip \
  && pip install -I --no-index --find-links="/pip-package-rtpacs/" pyparsing \
  && pip install  --no-index --find-links="/pip-package-rtpacs/" SimpleITK matplotlib networkx scikit-image \
  && rm -rf /pip-package-rtpacs
+#COPY ./.pip /root/
+#RUN /usr/local/python36/bin/python3.6 -m pip --no-cache-dir install --upgrade pip \ 
+ &&/usr/local/python36/bin/python3.6 -m pip --no-cache-dir install numpy \
+ &&/usr/local/python36/bin/python3.6 -m pip --no-cache-dir install pandas \
+ &&/usr/local/python36/bin/python3.6 -m pip --no-cache-dir install pillow \
+ &&/usr/local/python36/bin/python3.6 -m pip --no-cache-dir install sklearn \
+ &&/usr/local/python36/bin/python3.6 -m pip --no-cache-dir install antspyx \
+ &&/usr/local/python36/bin/python3.6 -m pip --no-cache-dir install scikit-image \
+ &&/usr/local/python36/bin/python3.6 -m pip --no-cache-dir install webcolors \
+ &&/usr/local/python36/bin/python3.6 -m pip --no-cache-dir install plotly \
+ &&/usr/local/python36/bin/python3.6 -m pip --no-cache-dir install matplotlib \
+ && rm -rf ~/.cache/pip
 
 # Clean Cache     
 RUN yum clean all&&rm -rf /var/cache/yum
